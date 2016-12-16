@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stickers</title>
+    <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.css">
+  </head>
+  <body class="container">
+    <header class="page-header">
+      <h1>Stickers</h1>
+      <a class="btn btn-success" href="/">Home</a>
+    </header>
+    <main>
+      <section class="user">
+
+      </section>
+      <section class="stickers">
+
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script src="./scripts/user.js"></script>
+    <script id="user-template" type="text/x-handlebars-template">
+      <h1> {{email}} </h1>
+    </script>
+    <script id="sticker-template" type="text/x-handlebars-template">
+      <div class="row">
+        {{#each stickers}}
+            <div class="col-sm-6 col-md-4">
+              <div class="thumbnail">
+                <img src="{{this.image_url}}" alt="{{description}}">
+                <div class="caption">
+                  <h3>{{description}}</h3>
+                </div>
+              </div>
+            </div>
+        {{/each}}
+      </div>
+    </script>
+  </body>
+</html>
