@@ -21,11 +21,21 @@ function parseQuery(query) {
 }
 
 function getUserInfo(id) {
-  return $.get(`${API_URL}/user/${id}`)
+  return $.get({
+    url: `${API_URL}/user/${id}`,
+    headers: {
+      Authorization: `Bearer ${localStorage.token}`
+    }
+  })
 }
 
 function getStickers(id) {
-  return $.get(`${API_URL}/user/${id}/sticker`)
+  return $.get({
+    url: `${API_URL}/user/${id}/sticker`,
+    headers: {
+      Authorization: `Bearer ${localStorage.token}`
+    }
+  })
 }
 
 function addUserInfoToPage(user) {
